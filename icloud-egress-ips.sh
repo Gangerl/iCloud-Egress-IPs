@@ -10,7 +10,7 @@ curl --silent --fail https://mask-api.icloud.com/egress-ip-ranges.csv \
 		v4_16[$1 "." $2]++
 	}
 
-	/^[[:alnum:]]+:/ {		# v6 has some chars "0-9a-f" followed by ":"
+	/^[[:xdigit:]]+:/ {		# v6 has some chars "0-9a-f" followed by ":"
 		v6_32[$1 ":" $2]++
 	}
 
